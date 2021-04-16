@@ -1,0 +1,57 @@
+<div class="barreorange">
+    <h1>All guest and form confirmed</h1>
+</div>
+<%= column_chart @data %>
+<div class="container">
+  <br>
+<div class="rowbouton">
+  <div class="backtaille">
+    <div class="back-btn">
+      <%= link_to"Back to event", event_path(@event.id), class:"btn" %>
+    </div>
+  </div>
+  <%= link_to "Printable preferences for Event (PDF)", event_preferences_path(@event, format: :pdf) %></p>
+</div>
+
+<br>
+
+<table class="table">
+  <thead>
+  <th class="fname-head">First name</th>
+  <th class="lname-head">Last name</th>
+  <th id="email-head">Comment</th>
+  </thead>
+    <% @surveys.each do |survey| %>
+  <tbody>
+    <tr>
+      <td class="fname-cell text-wrap ">
+      <%= survey.guest.first_name %>
+      </td>
+      <td class="lname-cell text-wrap ">
+      <%= survey.guest.last_name %>
+      </td>
+      <td class="email-cell text-wrap">
+      <%= survey.comment %>
+      </td>
+    </tr>
+  </tbody>
+    <% end%>
+</table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

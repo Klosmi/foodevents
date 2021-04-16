@@ -1,0 +1,29 @@
+<div class="barreorange">
+    <h1>ALL EVENTS</h1>
+</div>
+<div class="container-event">
+    <div class="center-newevent-btn">
+        <%= link_to "Create a new event", new_event_path, class:"new-event-btn" %>
+    </div>
+</div>
+<div class="buttonevent">
+    <div class="allevents">
+        <% @events.each do |event| %>
+        <%= link_to event_path(event) do %>
+        <br>
+        <div class="firstevent">
+            <div class="wedding">
+                <%= image_tag("image-card.png") %>
+            </div>
+            <div class="card-infos">
+                <%= event.title  %>
+                <br>
+                <%= event.date %>
+            </div>
+        </div>
+        <% end %>
+        <% end %>
+    </div>
+</div>
+<div class="buttonnewevent">
+</div>

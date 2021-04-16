@@ -1,0 +1,98 @@
+
+<div class="barreorange">
+    <h1>
+        <%= @event.title %>
+    </h1>
+    <div class="container">
+        <div class="row">
+            <div class="will-be-hidden  d-none">
+                <% @guests.each do |guest| %>
+                <%= guest.first_name %>
+                <%= guest.last_name %>
+                <%= guest.email %>
+                <% survey = guest.surveys.where(event:@event).first %>
+                <% if survey  %>
+                <%=  link_to "edit form", edit_survey_path(survey) %>
+                <% end%>
+                <% end%>
+            </div>
+            <!-- FORM -->
+            <div class="block mt-6 mt-md-0 ">
+                <h2 class="d-flex justify-content-center register-title"> Register new guests </h2>
+                <div class="col-12 d-flex justify-content-center guestformulaire">
+                    <%= simple_form_for ([@event, @guest]) do |f| %>
+                    <%= f.input :first_name %>
+                    <%= f.input :last_name %>
+                    <%= f.input :email %>
+
+                <!-- BUTTON -->
+                <div class="back-btn d-flex justify-content-center">
+                    <%= f.button :submit, "create new guest", class: "btn-guest"  %>
+                </div>
+                <% end %>
+                </div>
+
+                        <br>
+                        <!-- BUTTON -->
+                        <div class="d-flex justify-content-center registered-back pt-0 ">
+                            <div class="back-btn">
+                                <%= link_to 'Back', events_path, class: "btn" %>
+                            </div>
+                        </div>
+                        <!-- TABLE TITLE-->
+                        <div class="table-main-title">
+                            <h2 class="d-flex justify-content-center list-of-registered-title"> List of registered guests </h2>
+                            <%= form_tag new_event_guest_path(@event.id), method: :get do %>
+                            <%= text_field_tag :query,
+                      params[:query],
+                      class: "form-control",
+                      placeholder: "Find a guest" %>
+
+                            <!-- BUTTON -->
+                            <div class="search-button d-flex justify-content-center mt-2">
+                                <%= submit_tag "Search", class: "btn-search" %>
+
+                            </div>
+                          <% end %>
+                        </div>
+                        <!-- TABLE -->
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th class="fname-head">First name</th>
+                                <th class="lname-head">Last name</th>
+                                <th id="email-head">Email</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            <% @guests.each do |guest| %>
+
+                                <tr>
+                                    <td class="fname-cell text-wrap ">
+                                        <%= guest.first_name %>
+                                    </td>
+                                    <td class="lname-cell text-wrap ">
+                                        <%= guest.last_name %>
+                                    </td>
+                                    <td class="email-cell text-wrap">
+                                        <%= mail_to guest.email %>
+                                        <div class="trash d-flex justify-content-end ">
+                                            <% survey = guest.surveys.where(event_id:@event.id).first %>
+                                            <% if survey  %>
+                                            <%  link_to "edit form", edit_survey_path(survey) %>
+                                            <% end %>
+                                            <%= link_to event_guest_path(@event, guest), method: :delete, data: {confirm: "Are you sure?"} do  %>
+                                            <i class="far fa-trash-alt"></i>
+                                            <% end %>
+
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <% end%>
+                            </tbody>
+                        </table>
+            </div>
+        </div>
+    </div>
+</div>

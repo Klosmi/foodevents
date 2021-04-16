@@ -1,0 +1,41 @@
+.full-page {
+    // height: 100%;
+    // width: 100%;
+    background-repeat: no-repeat;
+    background: linear-gradient(32deg, rgba(242, 116, 0, 1) 0%, rgba(192, 44, 105, 1) 88%);
+}
+
+.homepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 90vh;
+}
+
+
+.home-title {
+    color: #FFF;
+    padding: 50px;
+    transition: all 700ms ease-in-out;
+    text-align: center;
+
+    &:hover {
+        padding: 50px;
+        transform: scale(1.1);
+    }
+}
+
+a .login {
+    color: #4A4A4A;
+    border: 1px solid #4A4A4A;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: lighter;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+a .login:hover {
+    opacity: 1;
+}

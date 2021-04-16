@@ -1,0 +1,144 @@
+/* form */
+#new_guest {
+    width: 50vw;
+}
+
+.form-control:focus {
+    text-decoration: none;
+    box-shadow: none;
+}
+
+
+
+/* button */
+.registered-back {
+    padding: 20px 0;
+
+    .btn {
+        padding: 5px 160px;
+    }
+}
+
+/* search button */
+.search-button
+
+/* delete */
+.trash a {
+    color: $color-pink;
+    text-decoration: none;
+}
+
+/* table */
+.table-registered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table {
+    border: none;
+}
+
+
+.titletb h2 {
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+
+.table th {
+    // height: 10px;
+    font-family: 'Montserrat', sans-serif;
+    color: #FFF;
+    background-color: $color-orange;
+    border: solid 2px rgba(238, 232, 219, .4);
+}
+
+.email-cell a {
+    color: $color-orange;
+
+    &:hover {
+        text-decoration: none;
+        color: #FFF;
+    }
+}
+
+tr {
+    background-color: $color-butter;
+    border: solid 2px rgba(238, 232, 219, .4);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: $color-orange;
+    transition-duration: 600ms;
+
+
+    &:hover {
+        background-color: #fec38d;
+    }
+}
+
+
+
+// TEXT
+/* title */
+.register-title {
+    margin-top: -50px;
+}
+
+.list-of-registered-title {
+    margin: 30px 0;
+}
+
+
+
+
+/*  delete participant */
+.fa-trash-alt {
+    color: $color-pink;
+    transition-duration: 500ms;
+
+    &:hover {
+        color: #FFF;
+    }
+}
+
+
+@media only screen and (min-device-width: 300px) and (max-device-width: 480px) {
+    .register-title {
+        margin-top: -100px;
+    }
+
+    #new_guest {
+        width: 70vw;
+    }
+
+    #email-head {
+        padding: 5px 80px;
+        font-size: 15px;
+    }
+
+    .fname-head,
+    .lname-head {
+        padding: 5px 15%;
+        font-size: 15px;
+    }
+
+    td {
+        word-wrap: break-word;
+        max-width: 1px;
+        font-size: 10px;
+
+        .fname-cell,
+        .lname-cell {
+            padding: 2% 1 5%;
+        }
+
+        td .email-cell {
+            padding: 2% 50%;
+        }
+
+    }
+
+
+}

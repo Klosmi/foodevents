@@ -1,0 +1,42 @@
+.signup-container {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+/* text */
+.signup-container .signup_title {
+    overflow: auto;
+    color: $color-lightorange;
+    font-weight: bold;
+}
+
+.signup-title {
+    text-align: left;
+    margin-top: 50px;
+    color: $color-orange;
+}
+
+.form-inputs {
+    margin: 20px auto;
+}
+
+.form-group {
+    color: $color-text;
+}
+
+.form-check-label {
+    color: $color-text;
+}
+
+/* required asterisk */
+.required {
+    abbr {
+        text-decoration: none;
+        color: $color-lightorange;
+    }
+}
