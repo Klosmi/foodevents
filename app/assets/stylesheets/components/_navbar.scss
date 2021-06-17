@@ -49,19 +49,15 @@
     }
 }
 
-
-/* navbar toggler (hamburger button) -> mobile view */
-// .navbar-toggler {
-//     border-radius: 100px;
-// }
-
-// .navbar-light .navbar-toggler {
-//     border: none;
-
-//     &:hover {
-//         border: none;
-//     }
-// }
+/* About */
+.about {
+    color: $color-text;
+    margin-left: 0.2rem;
+    &:hover {
+        text-decoration: none;
+        color: $color-lightorange;
+    }
+}
 
 .navbar-toggler:focus,
 .navbar-toggler:hover {

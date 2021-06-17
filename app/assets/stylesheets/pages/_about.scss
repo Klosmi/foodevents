@@ -1,0 +1,20 @@
+.about-container {
+  width: 600px;
+}
+
+@media screen and (max-width: 900px) {
+  .about-container  {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .about-container  {
+    width: 350px;
+  }
+}
+/* galaxy fold size */
+@media screen and (max-width: 280px) {
+  .about-container  {
+    width: 270px;
+  }
+}
