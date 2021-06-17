@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :surveys, only: :edit
   root to: 'pages#home'
+  get 'about', to: 'pages#about'
   resources :events, only:[:index, :show, :new, :create] do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
     get"surveys/preferences", to: "events#preferences", as: "preferences"
